@@ -1,0 +1,17 @@
+Użytkownik wyświetla aktualny stan lodówki.
+
+Pre conditions:
+1) Użytkownik jest zalogowany
+2) Na liście znajduje się produkt
+
+Post conditions:
+1) Produkty wyświetlone są od najkrócej do najdłużej ważnych
+
+Steps:
+1) Użytkownik otwiera aplikacje i wchodzi na główną stronę
+2) Pojawia się aktualna lista produktów oraz lista zakupów do zrobienia
+
+Extended steps:
+
+
+Implementation Notes:

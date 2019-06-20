@@ -1,0 +1,25 @@
+Użytkownik usuwa z listy przedmiot, który został zużyty.
+
+Pre conditions:
+1) Użytkownik jest zalogowany
+2) Na liście znajduje się produkt
+
+Post conditions:
+1) Produkt znika z listy
+
+Steps:
+1) Użytkownik otwiera aplikacje i klika w usuń produkt obok konkretnego produktu
+2) Pojawia się popup z potwierdzeniem decyzji
+3) Użytkownik akceptuje usunięcie
+4) Produkt znika z listy produktów w lodówce
+5) System pyta czy dodać do listy zakupów
+6) Użytkownik potwierdza dodanie
+7) Produkt zostaje dodany do listy zakupów
+
+Extended steps:
+3a) Użytkownik nie akceptuje usunięcia
+4a) Wyskakuje błąd walidacji
+
+6b) Użytkownik odrzuca dodanie
+
+Implementation Notes:

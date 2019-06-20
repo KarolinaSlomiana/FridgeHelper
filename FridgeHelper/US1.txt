@@ -1,0 +1,21 @@
+Użytkownik dodaje zakupiony produkt wraz z datą ważności do listy:
+
+Pre conditions:
+1) Użytkownik jest zalogowany
+
+Post conditions:
+1) Użytkownik widzi na liście dodany produkt
+
+Steps:
+1) Użytkownik otwiera aplikacje i klika w dodaj produkt
+2) Pojawia się popup dodawania produktu
+3) Wybiera kategorię produktu, datę ważności i co to jest
+4) Klika przycisk akceptuj
+5) System zapisuje dane do listy produktów
+
+Extended steps:
+3a) Użytkownik nie wpisuje wymaganych wartości
+4a) Wyskakuje błąd walidacji
+
+
+Implementation Notes:

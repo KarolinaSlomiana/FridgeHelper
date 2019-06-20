@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FridgeHelper.ViewModels.ProductDetailsViewModel>
+
+<table class="table productDetailsTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpiryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShelfNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CupboardName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecificName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOpen)
+            </th>
+            <th>
+                Show Used Products <input type="checkbox" class="showUsedProductsCheckBox" />
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @item.ExpiryDate?.ToShortDateString()
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShelfNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CupboardName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecificName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @item.PurchaseDate.ToShortDateString()
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOpen)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.ProductId  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.ProductId  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.ProductId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

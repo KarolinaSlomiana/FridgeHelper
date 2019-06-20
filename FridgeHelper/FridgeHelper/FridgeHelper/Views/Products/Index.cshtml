@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FridgeHelper.ViewModels.AggregatedProductViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+@*<div class="productImage"></div>*@
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" style="background-color: aliceblue">
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Minimum Expiry Date
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            IsOpen
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="productName">
+                @Html.HiddenFor(x=> item.Name)
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="productExpiryDate">
+                @item.MinimumExpiryDate?.ToShortDateString()
+            </td>
+            <td class="productCategory">
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td class="productAmount">
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td class="productIsOpen">
+                @Html.DisplayFor(modelItem=>item.IsOpen)
+            </td>
+            <td class="productAction">
+                @*<a asp-action="GetProductNameDetails" asp-route-name="@item.Name" class="productShowDetailsButton">Show Details</a>*@
+                <input type="button" class="productShowDetailsButton" value="Show Details"/>
+                <a asp-action="Create" asp-route-name="@item.Name">Create New</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
